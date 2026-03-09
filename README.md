@@ -114,5 +114,3 @@ Zwraca listę fraz bez wyników, posortowanych malejąco wg liczby wyszukiwań.
 2. `SearchResultSubscriber` sprawdza, czy liczba wyników wynosi 0.
 3. Jeśli tak, przekazuje frazę do `NoSearchResultLogger`.
 4. Logger wykonuje atomowy `INSERT ... ON DUPLICATE KEY UPDATE`, co zapewnia poprawność danych nawet przy równoległych żądaniach.
-
-# ShopwareNoSearchResultRegisterPlugin
