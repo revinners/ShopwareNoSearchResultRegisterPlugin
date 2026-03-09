@@ -1,0 +1,15 @@
+{
+    "revinners-no-search-result": {
+        "general": {
+            "mainMenuItemGeneral": "No Search Results",
+            "description": "List of search phrases with no results"
+        },
+        "list": {
+            "columnPhrase": "Search phrase",
+            "columnCount": "Search count",
+            "columnFirstSearchedAt": "First searched at",
+            "columnLastSearchedAt": "Last searched at"
+        }
+    }
+}
+

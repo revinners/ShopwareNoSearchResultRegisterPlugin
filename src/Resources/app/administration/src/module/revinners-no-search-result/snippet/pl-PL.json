@@ -1,0 +1,15 @@
+{
+    "revinners-no-search-result": {
+        "general": {
+            "mainMenuItemGeneral": "Frazy bez wyników",
+            "description": "Lista fraz wyszukiwania, dla których nie znaleziono produktów"
+        },
+        "list": {
+            "columnPhrase": "Fraza wyszukiwania",
+            "columnCount": "Liczba wyszukiwań",
+            "columnFirstSearchedAt": "Pierwsze wyszukiwanie",
+            "columnLastSearchedAt": "Ostatnie wyszukiwanie"
+        }
+    }
+}
+

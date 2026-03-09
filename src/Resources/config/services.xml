@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <!-- Definicja encji -->
+        <service id="Revinners\NoSearchResultRegister\Entity\NoSearchResultDefinition">
+            <tag name="shopware.entity.definition" entity="revinners_no_search_result"/>
+        </service>
+
+        <!-- Serwis logujący frazy -->
+        <service id="Revinners\NoSearchResultRegister\Service\NoSearchResultLogger">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+        </service>
+
+        <!-- Subskrybent zdarzeń wyszukiwania -->
+        <service id="Revinners\NoSearchResultRegister\Subscriber\SearchResultSubscriber">
+            <argument type="service" id="Revinners\NoSearchResultRegister\Service\NoSearchResultLogger"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <!-- Kontroler API -->
+        <service id="Revinners\NoSearchResultRegister\Api\NoSearchResultController" public="true">
+            <argument type="service" id="revinners_no_search_result.repository"/>
+            <tag name="controller.service_arguments"/>
+        </service>
+
+    </services>
+</container>
+

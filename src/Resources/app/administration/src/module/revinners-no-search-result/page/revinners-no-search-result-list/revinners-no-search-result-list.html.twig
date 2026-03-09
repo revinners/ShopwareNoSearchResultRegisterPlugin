@@ -1,0 +1,45 @@
+{% block revinners_no_search_result_list %}
+<sw-page class="revinners-no-search-result-list">
+
+    {% block revinners_no_search_result_list_smart_bar_header %}
+    <template #smart-bar-header>
+        <h2>{{ $tc('revinners-no-search-result.general.mainMenuItemGeneral') }}</h2>
+    </template>
+    {% endblock %}
+
+    {% block revinners_no_search_result_list_content %}
+    <template #content>
+        <sw-data-grid
+            :dataSource="items"
+            :columns="columns"
+            :isLoading="isLoading"
+            :showSettings="true"
+            :sortBy="sortBy"
+            :sortDirection="sortDirection"
+            @column-sort="onSortColumn">
+
+            <template #column-firstSearchedAt="{ item }">
+                {{ formatDate(item.firstSearchedAt) }}
+            </template>
+
+            <template #column-lastSearchedAt="{ item }">
+                {{ formatDate(item.lastSearchedAt) }}
+            </template>
+
+            <template #pagination>
+                <sw-pagination
+                    :total="total"
+                    :limit="limit"
+                    :page="page"
+                    @page-change="onPageChange"
+                    @limit-change="onLimitChange">
+                </sw-pagination>
+            </template>
+
+        </sw-data-grid>
+    </template>
+    {% endblock %}
+
+</sw-page>
+{% endblock %}
+

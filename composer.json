@@ -1,0 +1,33 @@
+{
+    "name": "revinners/no-search-result-register",
+    "description": "Shopware 6 plugin that registers search phrases with no results",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "version": "1.0.0",
+    "require": {
+        "shopware/core": "~6.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Revinners\\NoSearchResultRegister\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "Revinners\\NoSearchResultRegister\\RevinnersNoSearchResultRegister",
+        "label": {
+            "de-DE": "No Search Result Register",
+            "en-GB": "No Search Result Register",
+            "pl-PL": "Rejestr fraz bez wyników"
+        },
+        "description": {
+            "de-DE": "Speichert Suchanfragen ohne Ergebnisse in der Datenbank",
+            "en-GB": "Saves search phrases with no results to the database",
+            "pl-PL": "Zapisuje frazy wyszukiwania bez wyników w bazie danych"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    }
+}
