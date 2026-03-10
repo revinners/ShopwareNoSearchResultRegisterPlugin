@@ -21,12 +21,6 @@
             <tag name="kernel.event_subscriber"/>
         </service>
 
-        <!-- Kontroler API -->
-        <service id="Revinners\NoSearchResultRegister\Api\NoSearchResultController" public="true">
-            <argument type="service" id="revinners_no_search_result.repository"/>
-            <tag name="controller.service_arguments"/>
-        </service>
-
     </services>
 </container>
 

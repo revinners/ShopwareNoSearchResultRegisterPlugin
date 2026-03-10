@@ -7,7 +7,6 @@ Plugin Shopware 6.6, który zapisuje w bazie danych frazy wyszukiwania, dla któ
 - Automatyczne przechwytywanie fraz wyszukiwania bez wyników
 - Zliczanie, ile razy dana fraza była wyszukiwana
 - Zapis daty pierwszego i ostatniego wyszukiwania
-- Endpoint REST API do przeglądania danych
 - Moduł w panelu administracyjnym (lista fraz posortowana wg liczby wyszukiwań)
 
 ## Instalacja
@@ -64,8 +63,6 @@ RevinnersNoSearchResultRegister/
     │   └── SearchResultSubscriber.php        # Nasłuchiwanie zdarzeń
     ├── Service/
     │   └── NoSearchResultLogger.php          # Logika zapisu (atomowy UPSERT)
-    ├── Api/
-    │   └── NoSearchResultController.php      # REST API
     └── Resources/
         ├── config/
         │   ├── services.xml                  # Rejestracja serwisów DI
@@ -80,32 +77,6 @@ RevinnersNoSearchResultRegister/
                 └── page/revinners-no-search-result-list/
                     ├── index.js
                     └── revinners-no-search-result-list.html.twig
-```
-
-## API
-
-### GET /api/revinners/no-search-results
-
-Zwraca listę fraz bez wyników, posortowanych malejąco wg liczby wyszukiwań.
-
-**Parametry zapytania:**
-- `limit` (domyślnie: 25) – liczba rekordów na stronę
-- `offset` (domyślnie: 0) – przesunięcie
-
-**Przykładowa odpowiedź:**
-```json
-{
-    "total": 42,
-    "data": [
-        {
-            "id": "...",
-            "phrase": "nieistniejący produkt",
-            "count": 17,
-            "firstSearchedAt": "2025-01-10T08:00:00+00:00",
-            "lastSearchedAt": "2026-03-09T14:30:00+00:00"
-        }
-    ]
-}
 ```
 
 ## Jak to działa
