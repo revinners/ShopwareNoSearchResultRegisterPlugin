@@ -16,7 +16,6 @@ class SearchResultSubscriber implements EventSubscriberInterface
         'price',
         'rating',
         'shipping-free',
-        'order',
         'p',
         'only-aggregations'
     ];
