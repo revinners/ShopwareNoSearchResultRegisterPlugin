@@ -3,7 +3,7 @@
     "description": "Shopware 6 plugin that registers search phrases with no results",
     "type": "shopware-platform-plugin",
     "license": "proprietary",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "require": {
         "shopware/core": "~6.6",
         "shopware/storefront": "v6.6.10.7"

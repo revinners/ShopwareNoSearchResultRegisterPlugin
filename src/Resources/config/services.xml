@@ -18,6 +18,7 @@
         <!-- Subskrybent zdarzeń wyszukiwania -->
         <service id="Revinners\NoSearchResultRegister\Subscriber\SearchResultSubscriber">
             <argument type="service" id="Revinners\NoSearchResultRegister\Service\NoSearchResultLogger"/>
+            <argument type="service" id="Symfony\Component\HttpFoundation\RequestStack"/>
             <tag name="kernel.event_subscriber"/>
         </service>
 
