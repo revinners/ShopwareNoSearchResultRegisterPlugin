@@ -10,9 +10,17 @@
             <tag name="shopware.entity.definition" entity="revinners_no_search_result"/>
         </service>
 
+        <!-- Filtr śmieciowych fraz (SQLi/XSS/boty) – higiena rejestru fraz bez wyników -->
+        <service id="Revinners\NoSearchResultRegister\Service\JunkQueryFilter"/>
+
+        <!-- Normalizacja frazy – usuwa URL-e / parametry śledzące (utm, gclid, ...) -->
+        <service id="Revinners\NoSearchResultRegister\Service\QueryNormalizer"/>
+
         <!-- Serwis logujący frazy -->
         <service id="Revinners\NoSearchResultRegister\Service\NoSearchResultLogger">
             <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument type="service" id="Revinners\NoSearchResultRegister\Service\JunkQueryFilter"/>
+            <argument type="service" id="Revinners\NoSearchResultRegister\Service\QueryNormalizer"/>
         </service>
 
         <!-- Subskrybent zdarzeń wyszukiwania -->

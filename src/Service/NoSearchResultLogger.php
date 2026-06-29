@@ -7,13 +7,20 @@ use Shopware\Core\Framework\Uuid\Uuid;
 
 readonly class NoSearchResultLogger
 {
-    public function __construct(private Connection $connection)
-    {
+    public function __construct(
+        private Connection $connection,
+        private JunkQueryFilter $junkQueryFilter,
+        private QueryNormalizer $queryNormalizer
+    ) {
     }
 
     public function log(string $phrase): void
     {
-        $phrase = mb_substr(trim($phrase), 0, 500);
+        if ($this->junkQueryFilter->isJunk($phrase)) {
+            return;
+        }
+
+        $phrase = mb_substr(trim($this->queryNormalizer->normalize($phrase)), 0, 500);
 
         if ($phrase === '') {
             return;
