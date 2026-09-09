@@ -1,4 +1,5 @@
 import './page/revinners-no-search-result-list';
+import deDE from './snippet/de-DE.json';
 import enGB from './snippet/en-GB.json';
 import plPL from './snippet/pl-PL.json';
 
@@ -13,6 +14,7 @@ Module.register('revinners-no-search-result', {
     icon: 'regular-search',
 
     snippets: {
+        'de-DE': deDE,
         'en-GB': enGB,
         'pl-PL': plPL,
     },

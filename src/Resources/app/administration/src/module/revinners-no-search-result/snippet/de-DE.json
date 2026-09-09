@@ -1,0 +1,14 @@
+{
+    "revinners-no-search-result": {
+        "general": {
+            "mainMenuItemGeneral": "Suchanfragen ohne Treffer",
+            "description": "Liste der Suchbegriffe, die kein Ergebnis geliefert haben"
+        },
+        "list": {
+            "columnPhrase": "Suchbegriff",
+            "columnCount": "Anzahl der Suchanfragen",
+            "columnFirstSearchedAt": "Zuerst gesucht am",
+            "columnLastSearchedAt": "Zuletzt gesucht am"
+        }
+    }
+}
